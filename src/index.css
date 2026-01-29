@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smart Expense Tracker Design System
+   A modern, professional financial app aesthetic with trust-inspiring colors */
+
+@layer base {
+  :root {
+    /* Core brand colors - Deep teal/emerald for trust and finance */
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    /* Primary: Deep emerald - trust, growth, money */
+    --primary: 160 84% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft sage */
+    --secondary: 160 30% 94%;
+    --secondary-foreground: 160 84% 25%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 15% 46%;
+
+    /* Accent: Warm amber for highlights */
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success: Bright green for income */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning: Orange for alerts */
+    --warning: 32 95% 44%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Info: Blue for tips */
+    --info: 210 92% 45%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 160 84% 28%;
+
+    --radius: 0.75rem;
+
+    /* Chart colors */
+    --chart-income: 142 76% 36%;
+    --chart-expense: 0 72% 51%;
+    --chart-food: 32 95% 44%;
+    --chart-travel: 210 92% 45%;
+    --chart-shopping: 280 65% 60%;
+    --chart-bills: 160 84% 28%;
+    --chart-other: 220 15% 46%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 28%) 0%, hsl(170 76% 36%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(160 84% 28%) 0%, hsl(180 70% 35%) 50%, hsl(200 80% 40%) 100%);
+    --gradient-income: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(152 70% 45%) 100%);
+    --gradient-expense: linear-gradient(135deg, hsl(0 72% 51%) 0%, hsl(10 70% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 25% 10% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 25% 10% / 0.1), 0 2px 4px -2px hsl(220 25% 10% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 25% 10% / 0.1), 0 4px 6px -4px hsl(220 25% 10% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(220 25% 10% / 0.1), 0 8px 10px -6px hsl(220 25% 10% / 0.1);
+    --shadow-card: 0 4px 20px -2px hsl(160 84% 28% / 0.08);
+    --shadow-glow: 0 0 20px hsl(160 84% 28% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 160 84% 28%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 160 70% 45%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 160 20% 18%;
+    --secondary-foreground: 160 70% 60%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 15% 60%;
+
+    --accent: 38 85% 55%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 60% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 32 85% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 210 80% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 160 70% 45%;
+
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 160 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 160 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-card;
+  }
+
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl p-6 transition-all duration-300 hover:shadow-lg;
+  }
+
+  .stat-card-income {
+    background: var(--gradient-income);
+    @apply text-success-foreground;
+  }
+
+  .stat-card-expense {
+    background: var(--gradient-expense);
+    @apply text-destructive-foreground;
+  }
+
+  .stat-card-savings {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground;
+  }
+
+  .chart-container {
+    @apply bg-card rounded-xl p-6 shadow-card border border-border/50;
+  }
+
+  .tip-card {
+    @apply flex items-start gap-3 p-4 rounded-lg border transition-all duration-200 hover:shadow-md;
+  }
+
+  .tip-card-warning {
+    @apply bg-warning/10 border-warning/30 text-warning;
+  }
+
+  .tip-card-info {
+    @apply bg-info/10 border-info/30 text-info;
+  }
+
+  .tip-card-success {
+    @apply bg-success/10 border-success/30 text-success;
+  }
+
+  .form-section {
+    @apply bg-card rounded-xl p-6 shadow-card border border-border/50;
+  }
+
+  .auth-container {
+    @apply min-h-screen flex items-center justify-center p-4;
+    background: var(--gradient-hero);
+  }
+
+  .auth-card {
+    @apply w-full max-w-md bg-card rounded-2xl shadow-xl p-8;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200;
+  }
+
+  .nav-link:hover {
+    @apply bg-secondary;
+  }
+
+  .nav-link.active {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
